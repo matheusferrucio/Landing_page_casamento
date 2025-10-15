@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Style+Script&display=swap');
+
+/* font-family: "Parisienne", cursive; Exemplo de como chamar a letra cursiva*/
+
+/* reset css */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+}
+
+/* variáveis de cor */
+:root {
+    --verde-oliva: #5c7b61;
+    --branco: #fff;
+    --cor-texto: #161616;
+    --dourado: #C7B58C;
+    --dourado-medio: #b4a377;
+    --dourado-escuro: #9e8e61;
+}
+
+/* formatação padrão do container */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.row {
+    width: 100%;
+}
+
+/* Classe para centralizar elementos com flexbox */
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Classes de fontes */
+.parisienne {
+    font-family: "Parisienne", cursive;
+}
+
+.fraunces {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+}
+
+.style_script {
+  font-family: "Style Script", cursive;
+  font-weight: bolder;
+  font-style: normal;
+}
+/* ======================== */
+
+.texto_bold {
+    font-weight: bold;
+}
+/* ======================== */
+
+body > .container:first-of-type {
+    flex-direction: row;
+    height: 100vh;
+    margin-bottom: 50px;
+    
+    & .nomes, .foto {
+        flex: 1;
+        height: 100%;
+        flex-direction: column;
+
+    }
+
+    & .nomes {
+        position: relative;
+    }
+
+    /* Formata a imagem de flor acima dos nomes */
+    & .nomes > img.foto_flor {
+        position: absolute;
+        width: 90%;
+        top: -80px;
+        left: 0;
+        opacity: .4;
+        transform: rotate(180deg);
+    }
+
+    & .nomes > .box {
+        flex-direction: column;
+        align-items: start;
+        position: relative;
+    }
+
+    /* Ajusta especificamente a .row da data */
+    & .nomes .box .data_casamento {
+        width: 100% !important;
+        height: 80px;
+    }
+
+    /* Formata a data */
+    & .nomes .box .data_casamento h3 {
+        font-size: 1.3rem;
+        letter-spacing: 4px;
+        color: var(--dourado);
+        line-height: normal;
+    }   
+
+    /* Gera linhas para organizar os nomes */
+    & .nomes .box > .row {
+        width: auto;
+        line-height: 90px;
+    }
+
+    /* Formata os nomes */
+    & .nomes h1 {
+        font-size: 6rem;
+        color: var(--verde-oliva);
+    }
+
+    /* Formata o & dos nomes */
+    & .nomes h1.e_comercial {
+        color: var(--dourado);
+        position: absolute;
+        right: -65px;
+        text-shadow: -2px -2px 4px rgba(0, 0, 0, 0.205);
+        transform: rotate(10deg);
+        top: 60%;
+        font-size: 8rem;
+    }
+
+    /* Formata a sessão da foto  */
+    & .foto .moldura {
+        width: 80%;
+        height: 90%;
+        border-radius: 30px;
+        position: relative;
+    }
+
+    & .foto .moldura .borda {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: 8px;
+        bottom: 8px;
+        border-radius: 40px 60px 20px 40px;
+        border: 2px solid var(--dourado);
+    }
+
+    & .foto .moldura img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 30px;
+        display: block;
+        background: #e0e0e0;
+        box-shadow:  28px 28px 57px #bebebe,
+             -28px -28px 57px #ffffff;
+    }
+}
+
+/* Formatação da sessão sobre nós */
+section.sobre_nos {
+    background-color: var(--verde-oliva);
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    position: relative;
+
+    & .card {
+        flex: 1;
+        position: relative;
+    }
+
+    & .card:first-of-type > .moldura {
+        width: 60%;
+        height: 450px;
+        border-radius: 50% 50% 0 0;
+        overflow: hidden;
+        border: 3px solid var(--dourado);
+    }
+
+    & .card:first-of-type > .moldura:first-of-type {
+        position: absolute;
+        width: 65%;
+        height: 480px;
+    }
+
+    & .card:first-of-type > .moldura img {
+        width: 100%;
+        height: 100%;
+        border-radius: 40% 40% 0 0;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+    }
+
+    & .card:last-of-type {
+        flex-direction: column;
+        gap: 15px;
+        height: 100%;
+        text-align: justify;
+        padding: 0 40px 0 0;
+    }
+
+    & .card:last-of-type h2 {
+        color: var(--dourado);
+        font-size: 1.7rem;
+        text-transform: uppercase;
+    }
+
+    & .card:last-of-type p {
+        color: var(--branco);
+    }
+
+    & .card:last-of-type p > span {
+        color: var(--dourado);
+    }
+}
+
+/* Formatação da sessão de presentes */
+section.lista_presentes {
+    padding: 60px 0;
+
+    & .container {
+        flex-wrap: wrap;
+    }
+
+    & .container .box {
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+    }
+
+    & .container .box .row{
+        text-align: center;
+    }
+
+    /* Sessão dos presentes */
+    & .container .box i {
+        font-size: 3rem;
+        color: var(--dourado);
+    }
+
+    & .container .box .row h2 {
+        font-size: 3rem;
+        color: var(--verde-oliva);
+        letter-spacing: 2px;
+    }
+
+    & .container .box:first-of-type .row {
+        text-align: center;
+    }   
+
+    & .container .box .row p {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    & .container .box .row p > span {
+        font-weight: 700;
+    }
+
+    & .container .box .btn_lista_presentes,
+    .btn_copiar_pix {
+        padding: 10px 30px;
+        border-radius: 20px;
+        background-color: var(--verde-oliva);
+        box-shadow: 0px 10px 14px -7px var(--verde-oliva);
+        cursor: pointer;
+        
+        color: var(--branco);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all .5s ease;
+        border: none;
+    }   
+
+    & .container .box .btn_lista_presentes:hover {
+        transform: scale(1.05);
+    }
+
+    /* Sessão do PIX */
+    & .container .box:last-of-type > .row {
+        justify-content: center;
+        display: flex;
+    }
+    
+    & .container .box:last-of-type > .row h2 {
+        font-size: 2.5rem;
+        max-width: 450px;
+    }
+
+    & .container .box:last-of-type > .row .moldura img {
+        width: 30%;
+        padding: 5px;
+        border: 3px dashed var(--dourado);
+        border-radius: 20px;
+    }
+
+    & .container .box:last-of-type > .btn_copiar_pix:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Galeria de fotos */
+section.galeria_fotos {
+    background-image: linear-gradient(to right, var(--dourado),var(--dourado-medio), var(--dourado-escuro));
+    padding: 50px 0;
+
+    & .container:first-of-type {
+        padding: 30px 0;
+    }
+
+    & .container:first-of-type > h1{
+        font-size: 2rem;
+        color: var(--branco);
+    }
+
+    & .container:last-of-type {
+        display: grid;
+        /* grid-template-columns: define o tamanho e quantidade de colunas */
+        /* repeat: repete uma definição da coluna */
+        /* auto-fill: instrui o grid a tentar criar o máximo de colunas possíveis */
+        /* minmax: define um valor mínimo e um valor máximo para a coluna, então ela nunca será menor que 400px, e se sobrar espaço ela assume o tamanho de 1 fração(1fr) */
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 12px;
+    }
+    
+    & .container .foto1 {
+        height: 600px;
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+    }
+
+    & .container .foto1 > img {
+        object-position: 50% 20%;
+    }
+
+    & .container .foto2 {
+        height: 294px;
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    & .container .foto2 > img {
+        object-position: 30% 55%;
+    }
+
+    & .container .foto3 {
+        height: 294px;
+        grid-column: 3 / 4;
+        grid-row: 2 / 2;
+    }
+
+    & .container .foto3 > img {
+        object-position: 50% 10%;
+    }
+
+    & .container div > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.226);
+    }
+}
+
+section.sobre_a_festa {
+    padding: 50px 0;
+
+    /* formatação do container */
+    & .informacoes_festa {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    & .informacoes_festa .row {
+        width: 80%;
+    }
+    
+    & .informacoes_festa .row:not(:last-of-type) {
+        height: 180px;
+        gap: 15px;
+    }
+    
+    /* formatação geral dos cards sobre a festa */
+    & .informacoes_festa .row .card {
+        flex: 1;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.116);
+    }
+    
+    /* formatação do card data da festa */
+    & .informacoes_festa .row .data_festa {
+        background-color: var(--verde-oliva);
+
+        & i {
+            color: var(--dourado);
+            font-size: 2rem;
+        }
+
+        & p {
+            color: var(--branco);
+            /* font-size: 1.2rem; */
+        }
+
+        & h2 {
+            color: var(--dourado);
+            font-size: 2.1rem;
+            letter-spacing: 4px;
+        }
+    }
+
+    /* formatação do card de horário da festa */
+    & .informacoes_festa .row .horario_festa {
+        background-color: var(--dourado);
+
+        & i {
+            color: var(--verde-oliva);
+            font-size: 2rem;
+        }
+
+        & p {
+            color: var(--cor-texto);
+            /* font-size: 1.2rem; */
+        }
+
+        & h2 {
+            color: var(--verde-oliva);
+            font-size: 2.1rem;
+            letter-spacing: 4px;
+        }
+    }
+
+    & .informacoes_festa .row .local_festa {
+        background-color: var(--verde-oliva);
+
+        & .row {
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        & i {
+            color: var(--dourado);
+            font-size: 2rem;
+        }
+
+        & h2 {
+            color: var(--dourado);
+            font-size: 2.1rem;
+        }
+
+        & h3 {
+            color: var(--branco);
+            font-size: 1.4rem;
+        }
+
+        & p {
+            color: var(--branco);
+        }
+
+        & .row:last-of-type {
+            padding-top: 20px;
+        }
+
+        & .row:last-of-type > .card_mapa {
+            width: 70%;
+            height: 400px;
+        }
+
+        & .row:last-of-type > .card_mapa > iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+    }
+}
+
+footer {
+    background-color: var(--verde-oliva);
+    padding: 20px 0;
+
+    & .container {
+        flex-direction: column;
+
+        & h2 {
+            color: var(--branco);
+    
+            & span {
+                color: var(--dourado);
+                text-transform: uppercase;
+            }
+        }
+
+        & p {
+            color: var(--dourado);
+            font-size: .8rem;
+            font-weight: bold;
+            padding-top: 8px;
+        }
+    }
+
+}

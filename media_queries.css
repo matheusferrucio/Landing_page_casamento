@@ -1,0 +1,169 @@
+/* Aplica o responsivo para dispositivos móveis */
+@media screen and (max-width: 768px) {
+
+    body > .container:first-of-type {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* Ajusta a ordem das seções para que os nomes apareçam antes da foto*/
+    & .nomes {
+        width: 100%;
+        order: 1;
+    }
+
+    & .nomes .box {
+        height: 450px;
+        width: 80%;
+    }
+
+    & .nomes .box .row{
+        height: 90px;
+    }
+
+    & .nomes h1.e_comercial {
+        right: 10px !important;
+        top: 60%;
+    }
+
+    & .foto {
+        order: 1;
+        margin-bottom: 50px;
+    }
+    
+    /* Formata a imagem de flor para mobile */
+    & .nomes > img.foto_flor {
+        top: -60px;
+        width: 100%;
+        left: -10px;
+    }
+
+    /* Reduz o tamanho dos nomes para caberem em telas menores */
+    & .nomes h1 {
+        font-size: 3.5rem;
+        line-height: 50px;
+    }
+
+    /* Ajusta o estilo do '&' para mobile */
+    & .nomes h1.e_comercial {
+        font-size: 4rem;
+        right: -30px;
+        top: 60%;
+    }
+
+    /* Centraliza a data e os nomes */
+    & .nomes .box {
+        align-items: center;
+    }
+
+    /* Ajusta a linha dos nomes para evitar quebra de linha indesejada */
+    & .nomes .box > .row {
+        line-height: 50px;
+    }
+
+    /* Remove o espaçamento entre os nomes */
+    & .nomes .box > .row:nth-of-type(2) {
+        gap: 0;
+    }
+    
+    /* Ajusta o tamanho da data */
+    & .nomes .box .data_casamento h3 {
+        font-size: 1.1rem;
+    }   
+
+    /* Redimensiona a moldura da foto */
+    & .foto .moldura {
+        width: 90%;
+        height: 400px;
+    }
+
+    /* Sessão sobre nós */
+    section.sobre_nos > .container {
+        flex-direction: column;
+        gap: 45px;
+
+        & .card {
+            width: 80%;
+        }
+
+        & .card:first-of-type > .moldura {
+            width: 93%;
+        }
+
+        & .card:first-of-type > .moldura:first-of-type {
+            width: 100%;
+        }
+
+        & .card:last-of-type {
+            padding: 0;
+        }
+    }
+
+    /* Sessão lista de presentes */
+    section.lista_presentes > .container {
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    /* Sessão da galeria de fotos */
+    section.galeria_fotos .container:first-of-type {
+        width: 80%;
+        height: auto;
+        padding: 0 0 25px 0;
+
+        & h1 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+    
+    section.galeria_fotos > .container:last-of-type {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        width: 80%;
+
+        & div {
+            grid-column: auto;
+            grid-row: auto;
+            height: 400px;
+        }
+    }
+
+    section.sobre_a_festa > .informacoes_festa {
+        & .row:first-of-type {
+            flex-direction: column;
+            height: auto;
+
+            & .card {
+                width: 100%;
+            }
+        }
+
+        & .row:last-of-type .card > .row:first-of-type h2 {
+            font-size: 1.8rem;
+        }
+
+        & .row:last-of-type .card > .row.row:nth-of-type(2) h3, p {
+            font-size: 1rem;
+        }
+
+        & .row > .local_festa .row:last-of-type{
+            width: 100%;
+
+            & .card_mapa {
+                width: 100%;
+            }
+        }
+
+        
+    }
+
+    /* Formatação do footer */
+    footer > .container {
+        text-align: center;
+
+        & h2, span {
+            font-size: .9rem;
+        }
+    }
+}
