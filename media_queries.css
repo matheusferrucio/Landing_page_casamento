@@ -43,19 +43,20 @@
   /* Formata a imagem de flor para mobile */
   & .nomes > img.foto_flor {
     top: -50px !important;
-    left: -10px;
+    left: 50%;
+    transform: translate(-50%);
   }
 
   /* Reduz o tamanho dos nomes para caberem em telas menores */
   & .nomes .box .row > h1 {
-    font-size: 3rem !important;
+    font-size: 4.8rem !important;
     line-height: 50px;
   }
 
   /* Ajusta o estilo do '&' para mobile */
   & .nomes .box .row > h1.e_comercial {
     font-size: 4rem;
-    right: 0;
+    right: -20px;
     top: 60%;
   }
 
