@@ -1,9 +1,7 @@
-// executa o código só depois que a página carregou por completo
 document.addEventListener('DOMContentLoaded', function(){
     const btnCopiar = document.getElementById('btnCopiarPix');
 
     btnCopiar.addEventListener('click', function(){
-        // pega a chave pix do atributo criado 'data-chave'
         const chavePix = btnCopiar.getAttribute('data-chave');
 
         // usa a API clipboard para copiar o texto
