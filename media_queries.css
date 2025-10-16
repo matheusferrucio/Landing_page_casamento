@@ -8,7 +8,6 @@
     /* Ajusta a ordem das seções para que os nomes apareçam antes da foto*/
     & .nomes {
         width: 100%;
-        border: 2px solid black;
         order: 1;
     }
 
@@ -44,21 +43,20 @@
     
     /* Formata a imagem de flor para mobile */
     & .nomes > img.foto_flor {
-        top: -60px;
-        width: 100%;
+        top: -50px !important;
         left: -10px;
     }
 
     /* Reduz o tamanho dos nomes para caberem em telas menores */
-    & .nomes h1 {
-        font-size: 3.5rem;
+    & .nomes .box .row > h1 {
+        font-size: 3rem !important;
         line-height: 50px;
     }
 
     /* Ajusta o estilo do '&' para mobile */
-    & .nomes h1.e_comercial {
+    & .nomes .box .row > h1.e_comercial {
         font-size: 4rem;
-        right: -30px;
+        right: 0;
         top: 60%;
     }
 
@@ -108,12 +106,29 @@
         & .card:last-of-type {
             padding: 0;
         }
+
+        & .card > h2.titulo_sobre_nos {
+            text-align: center !important;
+            font-size: 1.5rem;
+        }
     }
 
     /* Sessão lista de presentes */
     section.lista_presentes > .container {
         flex-direction: column;
         gap: 45px;
+
+        & .box {
+            gap: 40px;
+
+            & .row > h2.fraunces {
+                margin-bottom: 25px;
+            }   
+
+            & .row .moldura img {
+                width: 60% !important;
+            }
+        }
     }
 
     /* Sessão da galeria de fotos */
@@ -155,11 +170,12 @@
         }
 
         & .row:last-of-type .card > .row:first-of-type h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            text-align: center;
         }
 
         & .row:last-of-type .card > .row.row:nth-of-type(2) h3, p {
-            font-size: 1rem;
+            font-size: .8rem;
         }
 
         & .row > .local_festa .row:last-of-type{
